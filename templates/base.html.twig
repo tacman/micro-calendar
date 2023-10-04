@@ -18,7 +18,7 @@
         {% endblock %}
 
         {% block javascripts %}
-{#            {{ importmap() }}#}
+            {{ importmap() }}
         {% endblock %}
     </head>
 
@@ -53,7 +53,6 @@
 
         <section>
             <h1>ImportMap</h1>
-            {{ importmap()|raw }}
 
             {% block body %}{% endblock %}
         </section>

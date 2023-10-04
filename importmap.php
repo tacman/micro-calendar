@@ -16,7 +16,6 @@
 return [
     'app' => [
         'path' => 'app.js',
-        'preload' => false,
     ],
     '@symfony/stimulus-bundle' => [
         'path' => '@symfony/stimulus-bundle/loader.js',
@@ -28,7 +27,16 @@ return [
     'lodash' => [
         'url' => 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm',
     ],
-    'lodash/camelCase.js' => [
+    'lodash/camelCase' => [
         'url' => 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/camelCase.js/+esm',
+    ],
+    '@fullcalendar/daygrid' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.9/+esm',
+    ],
+    '@fullcalendar/interaction' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.9/+esm',
+    ],
+    '@fullcalendar/core' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm',
     ],
 ];
