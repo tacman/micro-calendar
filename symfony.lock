@@ -64,6 +64,9 @@
             "tests/bootstrap.php"
         ]
     },
+    "stenope/stenope": {
+        "version": "v0.8.0"
+    },
     "symfony/asset-mapper": {
         "version": "6.3",
         "recipe": {

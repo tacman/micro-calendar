@@ -12,8 +12,10 @@
 
         {% block stylesheets %}
             {{ ux_controller_link_tags() }}
-            <link rel="stylesheet" href="{{ asset('vendor/barecss/css/bare.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('vendor/barecss/css/style.min.css') }}">
+            <link href="https://cdn.jsdelivr.net/npm/bare-css@2.0.3/css/bare.min.css" rel="stylesheet">
+
+{#            <link rel="stylesheet" href="{{ asset('vendor/barecss/css/bare.min.css') }}">#}
+{#            <link rel="stylesheet" href="{{ asset('vendor/barecss/css/style.min.css') }}">#}
             <link rel="stylesheet" href="{{ asset('styles/app.css') }}"/>
         {% endblock %}
 

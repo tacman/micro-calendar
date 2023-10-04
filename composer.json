@@ -25,6 +25,7 @@
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.16",
         "league/commonmark": "^2.3",
+        "stenope/stenope": "^0.8.0",
         "symfony/asset": "^6.3",
         "symfony/asset-mapper": "^6.3",
         "symfony/console": "^6.3",
