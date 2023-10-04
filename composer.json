@@ -1,0 +1,111 @@
+{
+    "name": "strangebuzz/microsymfony",
+    "description": "A template to initialize an application to use Symfony as a micro-framework",
+    "license": "MIT",
+    "type": "symfony-application-template",
+    "keywords": [
+        "micro-framework",
+        "php",
+        "poc",
+        "project-template",
+        "rad",
+        "symfony",
+        "web-application"
+    ],
+    "homepage": "https://microsymfony.ovh",
+    "require": {
+        "php": ">=8.1",
+        "ext-ctype": "*",
+        "ext-dom": "*",
+        "ext-iconv": "*",
+        "ext-libxml": "*",
+        "ext-simplexml": "*",
+        "ext-xml": "*",
+        "league/commonmark": "^2.3",
+        "symfony/asset": "~6.3.0",
+        "symfony/asset-mapper": "~6.3.0",
+        "symfony/console": "~6.3.0",
+        "symfony/dotenv": "~6.3.0",
+        "symfony/flex": "^2",
+        "symfony/form": "~6.3.0",
+        "symfony/framework-bundle": "~6.3.0",
+        "symfony/intl": "~6.3.0",
+        "symfony/monolog-bundle": "^3.8",
+        "symfony/runtime": "~6.3.0",
+        "symfony/stimulus-bundle": "^2.9",
+        "symfony/twig-bundle": "~6.3.0",
+        "symfony/validator": "~6.3.0",
+        "symfony/web-link": "~6.3.0",
+        "symfony/yaml": "~6.3.0",
+        "twig/extra-bundle": "^2.12 || ^3.0",
+        "twig/markdown-extra": "^3.5",
+        "twig/twig": "^2.12 || ^3.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.14",
+        "phpstan/extension-installer": "^1.2",
+        "phpstan/phpstan-symfony": "^1.2",
+        "phpunit/phpunit": "^9.0",
+        "symfony/browser-kit": "~6.3.0",
+        "symfony/css-selector": "~6.3.0",
+        "symfony/phpunit-bridge": "^6.3"
+    },
+    "replace": {
+        "symfony/polyfill-ctype": "*",
+        "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php73": "*",
+        "symfony/polyfill-php74": "*",
+        "symfony/polyfill-php80": "*",
+        "symfony/polyfill-php81": "*"
+    },
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "minimum-stability": "beta",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true,
+            "symfony/flex": true,
+            "symfony/runtime": true,
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "6.3.*"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@auto-scripts"
+        ],
+        "post-update-cmd": [
+            "@auto-scripts"
+        ],
+        "app:test": [
+            "vendor/bin/simple-phpunit"
+        ],
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd",
+            "asset-map:compile": "symfony-cmd"
+        }
+    },
+    "scripts-descriptions": {
+        "app:test": "Run all PHPUnit tests"
+    }
+}

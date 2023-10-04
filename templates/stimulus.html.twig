@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{# If you don't want to use the Stimulus bundle then you can include the controllers
+   manually like below. It will work even, you don't use the asset mapper component
+   (you still need symfony/asset). Check out assets/js/stimulus.js (which is not used here) #}
+
+{#
+{% block javascripts %}
+    {{ parent() }}
+    <script type="module" src="{{ asset('js/stimulus.js') }}" defer></script>
+{% endblock %}
+#}
+
+{% block body %}
+    <div class="sub-heading">
+        <h2>Some cool and simple JavaScript with Stimulus 🪢</h2>
+    </div>
+
+    <p>...without the JS tooling stuff and complexity.</p>
+
+    <p>It uses the new  <a target="_blank" href="https://symfony.com/doc/current/frontend/asset_mapper.html">
+            Symfony 6.3 asset mapper component</a> and the
+        <a target="_blank" href="https://symfony.com/bundles/StimulusBundle/current/index.html">
+            Stimulus bundle.</a>
+    </p>
+
+    <p>Check out the feature intruction on the <a target="_blank" href="https://symfony.com/blog/new-in-symfony-6-3-assetmapper-component">
+            Symfony blog</a>.</p>
+
+    <card>
+        <grid>
+            <div col="1/4">
+                <h3>Demo: form+dialog</h3>
+            </div>
+            <div col="3/4">
+                <div {{ stimulus_controller('hello') }}>
+                    <form {{ stimulus_target('hello', 'form') }}>
+                        <label for="name">Enter your name below and click on the <tag>Great</tag> button
+                            <input type="text" name="name" {{ stimulus_target('hello', 'name') }} />
+                        </label>
+
+                        <input primary type="submit" value="Great" {{ stimulus_action('hello', 'greet:prevent', 'click') }} />
+                    </form>
+
+                    <dialog {{ stimulus_target('hello', 'dialog') }}>
+                        <card>
+                            <h2 {{ stimulus_target('hello', 'greating') }}></h2>
+                            <form method="dialog">
+                                <menu>
+                                    <button {{ stimulus_action('hello', 'reset', 'click') }}>Close</button>
+                                </menu>
+                            </form>
+                        </card>
+                    </dialog>
+                </div>
+            </div>
+        </grid>
+    </card>
+
+    <card>
+        <grid>
+            <div col="1/4">
+                <h3>Demo: ajax call to API endpoint</h3>
+            </div>
+
+            <div col="3/4">
+                <div {{ stimulus_controller('api', {url: path('app_slugify_action')} )}}">
+                    <label for="title">
+                        Enter a blog post title below:
+                        <input type="text" required name="title"
+                                {{ stimulus_target('api', 'title') }}
+                                {{ stimulus_action('api', 'slugify') }} />
+                    </label>
+
+                    <label for="slug">
+                        Slug (readonly):
+                        <input readonly name="slug" {{ stimulus_target('api', 'slug') }} type="text" />
+                    </label>
+                </div>
+            </div>
+        </grid>
+    </card>
+{% endblock %}

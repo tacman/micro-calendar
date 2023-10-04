@@ -1,0 +1,97 @@
+name: Symfony
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+env:
+  XDEBUG_MODE: coverage
+
+jobs:
+  # run tests (critical)
+  symfony-tests:
+    strategy:
+      fail-fast: true
+      matrix:
+        php-versions: ['8.1', '8.2']
+    runs-on: ubuntu-latest
+    # Setup
+    steps:
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ matrix.php-versions }}
+        coverage: xdebug
+        #tools: castor
+    - uses: actions/checkout@v3
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: |
+        echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+    - uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    # Tests
+    - name: Execute tests via PHPUnit
+      run: vendor/bin/simple-phpunit
+      #run: castor test:all
+
+    # Code coverage
+    - name: Generate the code coverage report and show the current global coverage
+      run: |
+        php -d xdebug.enable=1 -d memory_limit=-1 vendor/bin/simple-phpunit --coverage-html=var/coverage
+        php bin/coverage-checker.php var/coverage/clover.xml 100
+
+  # run all lint/CS checks (non critical)
+  symfony-lint:
+    runs-on: ubuntu-latest
+    steps:
+    # Setup
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        tools: cs2pr
+        #tools: cs2pr, castor
+    - uses: actions/checkout@v3
+    - name: Get Composer Cache Directory
+      id: composer-cache
+      run: |
+        echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+    - uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-composer-
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    # native Symfony lints
+    - name: Lint the DI container
+      run: bin/console lint:container
+      #run: castor lint:container
+    - name: Lint Twig templates
+      run: bin/console lint:twig
+      #run: castor lint:twig
+    - name: Lint Yaml files
+      run: bin/console lint:yaml config/
+      #run: castor lint:yaml
+
+    # vendors
+    - name: php-cs-fixer
+      run: vendor/bin/php-cs-fixer fix --allow-risky=yes --dry-run --format=checkstyle | cs2pr
+    - name: PHPStan
+      #castor cs:stan
+      run: | 
+        bin/console about --env=dev
+        vendor/bin/phpstan analyse -c phpstan.neon --memory-limit 1G -vvv
