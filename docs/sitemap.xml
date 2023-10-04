@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
-            <loc>http://localhost/</loc>
-            <lastmod>2023-10-04T13:50:20+00:00</lastmod>            <priority>0</priority>            <changefreq>monthly</changefreq>
+            <loc>http://localhost/micro-calendar/</loc>
+            <lastmod>2023-10-04T13:55:47+00:00</lastmod>            <priority>0</priority>            <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/fullcalendar</loc>
-            <lastmod>2023-10-04T13:50:20+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/micro-calendar/fullcalendar</loc>
+            <lastmod>2023-10-04T13:55:47+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/composer</loc>
-            <lastmod>2023-10-04T13:50:20+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/micro-calendar/composer</loc>
+            <lastmod>2023-10-04T13:55:47+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/form</loc>
-            <lastmod>2023-10-04T13:50:20+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/micro-calendar/form</loc>
+            <lastmod>2023-10-04T13:55:47+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/api/slugify</loc>
-            <lastmod>2023-10-04T13:50:20+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/micro-calendar/api/slugify</loc>
+            <lastmod>2023-10-04T13:55:47+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
-            <loc>http://localhost/stimulus</loc>
-            <lastmod>2023-10-04T13:50:20+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <loc>http://localhost/micro-calendar/stimulus</loc>
+            <lastmod>2023-10-04T13:55:47+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
     </urlset>
