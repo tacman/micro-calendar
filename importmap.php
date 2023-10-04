@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * Returns the import map for this application.
  *
@@ -18,13 +16,19 @@ declare(strict_types=1);
 return [
     'app' => [
         'path' => 'app.js',
-        'preload' => true,
-    ],
-    '@hotwired/stimulus' => [
-        'url' => 'https://ga.jspm.io/npm:@hotwired/stimulus@3.2.1/dist/stimulus.js',
-        'preload' => true,
+        'preload' => false,
     ],
     '@symfony/stimulus-bundle' => [
         'path' => '@symfony/stimulus-bundle/loader.js',
+    ],
+    '@hotwired/stimulus' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm',
+        'preload' => true,
+    ],
+    'lodash' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm',
+    ],
+    'lodash/camelCase.js' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/camelCase.js/+esm',
     ],
 ];
