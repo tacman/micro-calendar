@@ -23,6 +23,7 @@ Note the lack of yarn install && yarn dev!
 I wanted to show the issue to the fullcalendar developers, but I didn't have an easy way to deploy a Symfony app.  
 
 So I created static pages using https://github.com/StenopePHP/Stenope and configured github pages to point to the /docs directory.  
+See it it on https://tacman.github.io/micro-calendar/
 
 ```bash
 bin/console asset-map:compile
