@@ -24,12 +24,6 @@ return [
         'url' => 'https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm',
         'preload' => true,
     ],
-    'lodash' => [
-        'url' => 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm',
-    ],
-    'lodash/camelCase' => [
-        'url' => 'https://cdn.jsdelivr.net/npm/lodash@4.17.21/camelCase.js/+esm',
-    ],
     '@fullcalendar/daygrid' => [
         'url' => 'https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.9/+esm',
     ],

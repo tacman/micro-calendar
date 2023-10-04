@@ -6,12 +6,6 @@
  */
 
 import './bootstrap.js';
-
-console.log('This log  comes from assets/app.js - welcome to MicroCal!')
-
-import camelCase from 'lodash/camelCase';
-console.log(camelCase('this is a test'));
-
 import { Calendar } from '@fullcalendar/core'
 import interactionPlugin from '@fullcalendar/interaction'
 import dayGridPlugin from '@fullcalendar/daygrid'

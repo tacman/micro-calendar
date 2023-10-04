@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Calendar</h1>
+    <div id="calendar">
+        The calendar will go here.
+    </div>
+
+    <h3>Importmap (in the head tag)</h3>
+    <pre>{{ importmap()|escape|raw }}</pre>
+    <h3>App.js</h3>
+    <pre>{{ js|escape|raw }}</pre>
+
+
+{% endblock %}
+

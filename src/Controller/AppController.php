@@ -30,6 +30,14 @@ final class AppController extends AbstractController
         return $this->render('home.html.twig', compact('readme'));
     }
 
+    #[Route(path: '/fullcalendar', name: 'fullcalendar')]
+    public function fullcalendar(): Response
+    {
+        $js = file_get_contents(__DIR__.'/../../assets/app.js');
+
+        return $this->render('fullcalendar.html.twig', compact('js'));
+    }
+
     /**
      * Displays the composer.json file.
      */
