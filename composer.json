@@ -12,7 +12,7 @@
         "symfony",
         "web-application"
     ],
-    "homepage": "https://github.com/tacman/micro-calendar",
+    "homepage": "https://tacman.github.io/micro-calendar",
     "require": {
         "php": ">=8.1",
         "ext-ctype": "*",

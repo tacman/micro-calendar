@@ -1,14 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-    <h1>Calendar</h1>
-    <div id="calendar">
-        The calendar will go here.
-    </div>
-
-    <hr/>
-
+    The issue with loading fullcalendar as a module is <a href="{{ path('app_fullcalendar') }}">here</a>
     {{ readme|raw|markdown_to_html|raw|add_att_attributes|raw }}
 {% endblock %}
 
