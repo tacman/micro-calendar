@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
             <url>
             <loc>http://localhost/micro-calendar/</loc>
-            <lastmod>2023-10-04T14:05:59+00:00</lastmod>            <priority>0</priority>            <changefreq>monthly</changefreq>
+            <lastmod>2023-10-04T18:01:57+00:00</lastmod>            <priority>0</priority>            <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>http://localhost/micro-calendar/fullcalendar</loc>
-            <lastmod>2023-10-04T14:05:59+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-10-04T18:01:57+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>http://localhost/micro-calendar/composer</loc>
-            <lastmod>2023-10-04T14:05:59+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-10-04T18:01:57+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>http://localhost/micro-calendar/form</loc>
-            <lastmod>2023-10-04T14:05:59+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-10-04T18:01:57+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>http://localhost/micro-calendar/api/slugify</loc>
-            <lastmod>2023-10-04T14:05:59+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-10-04T18:01:57+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
             <url>
             <loc>http://localhost/micro-calendar/stimulus</loc>
-            <lastmod>2023-10-04T14:05:59+00:00</lastmod>                        <changefreq>monthly</changefreq>
+            <lastmod>2023-10-04T18:01:57+00:00</lastmod>                        <changefreq>monthly</changefreq>
         </url>
     </urlset>

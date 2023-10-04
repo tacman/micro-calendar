@@ -35,4 +35,5 @@ You need the public/assets directory to get the right js files, but need to dele
 
 ## AssetMapper
 
-The AssetMapper component is the key that allows this site to work with javascript libraries without a build step.  It's using version 6.3 now, although will use 6.4 as soon as possible, since that version manages CSS better.  
+The AssetMapper component is the key that allows this site to work with javascript libraries without a build step.  
+This repo is using the dev version of Symfony 6.4.

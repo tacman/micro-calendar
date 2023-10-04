@@ -22,7 +22,6 @@ return [
     ],
     '@hotwired/stimulus' => [
         'url' => 'https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm',
-        'preload' => true,
     ],
     '@fullcalendar/daygrid' => [
         'url' => 'https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.9/+esm',
@@ -32,5 +31,8 @@ return [
     ],
     '@fullcalendar/core' => [
         'url' => 'https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm',
+    ],
+    'bootstrap' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/+esm',
     ],
 ];

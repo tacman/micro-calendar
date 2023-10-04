@@ -70,7 +70,7 @@
     "conflict": {
         "symfony/symfony": "*"
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
@@ -93,7 +93,8 @@
     },
     "extra": {
         "symfony": {
-            "allow-contrib": true
+            "allow-contrib": true,
+            "version": "^6.4"
         }
     },
     "scripts": {
@@ -108,8 +109,7 @@
         ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd",
-            "asset-map:compile": "symfony-cmd"
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         }
     },
     "scripts-descriptions": {

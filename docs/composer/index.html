@@ -26,13 +26,13 @@
         "@hotwired/stimulus": "https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm",
         "@fullcalendar/daygrid": "https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.9/+esm",
         "@fullcalendar/interaction": "https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.9/+esm",
-        "@fullcalendar/core": "https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm"
+        "@fullcalendar/core": "https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm",
+        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/+esm"
     }
 }
 </script>
 <!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support -->
 <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.2/dist/es-module-shims.js"></script>
-<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm">
 <script type="module">import 'app';</script>
             </head>
 
@@ -48,6 +48,7 @@
 
                 <ul>
                     <li><a href="/micro-calendar/">Home</a></li>
+                    <li><a href="https://github.com/tacman/micro-calendar">Github</a></li>
                     <li><a href="/micro-calendar/composer">Composer</a></li>
                     <li>
                         <a>Menu</a>
@@ -152,7 +153,7 @@
     &quot;conflict&quot;: {
         &quot;symfony/symfony&quot;: &quot;*&quot;
     },
-    &quot;minimum-stability&quot;: &quot;beta&quot;,
+    &quot;minimum-stability&quot;: &quot;dev&quot;,
     &quot;prefer-stable&quot;: true,
     &quot;autoload&quot;: {
         &quot;psr-4&quot;: {
@@ -175,7 +176,8 @@
     },
     &quot;extra&quot;: {
         &quot;symfony&quot;: {
-            &quot;allow-contrib&quot;: true
+            &quot;allow-contrib&quot;: true,
+            &quot;version&quot;: &quot;^6.4&quot;
         }
     },
     &quot;scripts&quot;: {
@@ -190,8 +192,7 @@
         ],
         &quot;auto-scripts&quot;: {
             &quot;cache:clear&quot;: &quot;symfony-cmd&quot;,
-            &quot;assets:install %PUBLIC_DIR%&quot;: &quot;symfony-cmd&quot;,
-            &quot;asset-map:compile&quot;: &quot;symfony-cmd&quot;
+            &quot;assets:install %PUBLIC_DIR%&quot;: &quot;symfony-cmd&quot;
         }
     },
     &quot;scripts-descriptions&quot;: {

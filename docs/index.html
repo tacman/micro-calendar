@@ -50,13 +50,13 @@
         "@hotwired/stimulus": "https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm",
         "@fullcalendar/daygrid": "https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.9/+esm",
         "@fullcalendar/interaction": "https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.9/+esm",
-        "@fullcalendar/core": "https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm"
+        "@fullcalendar/core": "https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm",
+        "bootstrap": "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/+esm"
     }
 }
 </script>
 <!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support -->
 <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.2/dist/es-module-shims.js"></script>
-<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm">
 <script type="module">import 'app';</script>
             </head>
 
@@ -72,6 +72,7 @@
 
                 <ul>
                     <li><a href="/micro-calendar/">Home</a></li>
+                    <li><a href="https://github.com/tacman/micro-calendar">Github</a></li>
                     <li><a href="/micro-calendar/composer">Composer</a></li>
                     <li>
                         <a>Menu</a>
@@ -93,121 +94,12 @@
             <h1>ImportMap</h1>
 
                 The issue with loading fullcalendar as a module is <a href="/micro-calendar/fullcalendar">here</a>
-    <h1>MicroSymfony &#127926;<h2>Introduction &#128395;</h2><p>MicroSymfony is a Symfony application skeleton on steroids, ready to use.</p><p>I have made a long blog post explaining all it contains; it will be the reference
-for documentation.
-I'll update it when needed:</p><ul>
-<li>
-<a href="https://www.strangebuzz.com/en/blog/introducing-the-microsymfony-application-template" att="">Introducing the MicroSymfony application template</a>
-</li>
-</ul><p>So this blog post is the official documentation.
-This readme is a teaser of what MicroSymfony contains.</p><h2>Demo &#127752;</h2><p>Because a live demo is always better than all explanations. Here is it:</p><ul>
-<li>Live demo at <a href="https://microsymfony.ovh" att="">https://microsymfony.ovh</a>
-</li>
-</ul><h2>Requirements &#9881;</h2><ul>
-<li>
-<a href="https://www.php.net/releases/8.1/en.php" att="">PHP 8.1</a> (works with <a href="https://github.com/strangebuzz/MicroSymfony/actions/runs/6363262161/job/17278782266" att="">PHP 8.2</a>)</li>
-<li>The <a href="https://symfony.com/download" att="">Symfony CLI</a>
-</li>
-</ul><h2>Optional requirements &#9881;</h2><ul>
-<li>The <a href="https://xdebug.org/" att="">Xdebug</a> PHP extension if you want to run the code coverage report</li>
-<li>
-<a href="https://github.com/jolicode/castor" att="">Castor 0.8</a> task runner</li>
-</ul><h2>Stack &#128279;</h2><ul>
-<li>
-<a href="https://symfony.com" att="">Symfony 6.3</a>
-</li>
-<li>
-<a href="https://twig.symfony.com" att="">Twig 3</a>
-</li>
-<li>
-<a href="https://stimulus.hotwired.dev/" att="">Stimulus 3.2</a>
-</li>
-<li>
-<a href="https://phpunit.de" att="">PHPUnit 9.5</a>
-</li>
-<li>The classless <a href="http://barecss.com" att="">BareCSS</a> CSS framework</li>
-</ul><h2>Features &#128640;</h2><p><strong>MicroSymfony</strong> ships these features, ready to use:</p><ul>
-<li>Two task runner
-<ul>
-<li>Make (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/Makefile" att="">source</a>) (<a href="https://www.strangebuzz.com/en/blog/introducing-the-microsymfony-application-template#h3_4_1" att="">demo</a>)</li>
-<li>Castor (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/castor.php" att="">source</a>) (<a href="https://www.strangebuzz.com/en/blog/introducing-the-microsymfony-application-template#h3_4_2" att="">demo</a>)</li>
-</ul>
-</li>
-<li>Static analysis with PHPStan
-<ul>
-<li>
-<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/phpstan.neon" att="">Configuration</a>
-</li>
-</ul>
-</li>
-<li>Coding standards with php-cs-fixer
-<ul>
-<li>
-<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/.php-cs-fixer.dist.php" att="">Configuration</a>
-</li>
-</ul>
-</li>
-<li>Tests (<a href="https://www.strangebuzz.com/en/blog/introducing-the-microsymfony-application-template#h2_7" att="">demo</a>)
-<ul>
-<li>Unit test <a href="https://github.com/strangebuzz/MicroSymfony/blob/main/tests/Unit/Helper/StringHelperTest.php" att="">example</a>
-</li>
-<li>Integration test <a href="https://github.com/strangebuzz/MicroSymfony/blob/main/tests/Integration/Twig/Extension/ResponseExtensionTest.php" att="">example</a>
-</li>
-<li>Functional test <a href="https://github.com/strangebuzz/MicroSymfony/blob/main/tests/Functional/Controller/AppControllerTest.php" att="">example</a>
-</li>
-<li>API test <a href="https://github.com/strangebuzz/MicroSymfony/blob/main/tests/Api/Controller/SlugifyActionTest.php" att="">example</a>
-</li>
-<li>E2E test <a href="https://github.com/strangebuzz/MicroSymfony/blob/main/tests/E2E/Controller/AppControllerTest.php" att="">example</a>
-</li>
-</ul>
-</li>
-<li>Code coverage at 100%
-<ul>
-<li>
-<a href="https://github.com/strangebuzz/MicroSymfony/actions/runs/5793881686/job/15702426150" att="">Output on CI</a>
-</li>
-<li>
-<a href="https://github.com/strangebuzz/MicroSymfony/actions/runs/5220428064/jobs/9423476258" att="">Failing output example</a>
-</li>
-</ul>
-</li>
-<li>GitHub CI (<a href="https://github.com/strangebuzz/MicroSymfony/actions" att="">actions</a>)
-<ul>
-<li>
-<a href="https://github.com/strangebuzz/MicroSymfony/actions/runs/5793881686/job/15702426150" att="">Tests job output</a>
-</li>
-<li>
-<a href="https://github.com/strangebuzz/MicroSymfony/actions/runs/5793881686/job/15702425939" att="">Lint job output</a>
-</li>
-</ul>
-</li>
-<li>Asset mapper+Stimulus (<a href="https://symfony.com/doc/current/frontend/asset_mapper.html" att="">documentation</a>)
-<ul>
-<li>Vanilla Js (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/assets/controllers/hello_controller.js" att="">source</a>) (<a href="https://microsymfony.ovh/stimulus" att="">demo</a>)</li>
-<li>Fetch on a JSON endpoint of the application (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/assets/controllers/api_controller.js" att="">source</a>) (<a href="https://microsymfony.ovh/stimulus" att="">demo</a>)</li>
-</ul>
-</li>
-<li>A custom error template
-<ul>
-<li>
-<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/templates/bundles/TwigBundle/Exception/error.html.twig" att="">Source</a>
-</li>
-<li>
-<a href="https://microsymfony.ovh/404" att="">Demo</a>
-</li>
-</ul>
-</li>
-</ul><h2>Other good practices &#128076;</h2><ul>
-<li>Using strict types in all PHP files (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/src/Controller/AppController.php" att="">source</a>)</li>
-<li>Using the ADR pattern in an action controller (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/src/Controller/SlugifyAcfion.php" att="">source</a>) (<a href="https://symfony.com/doc/current/controller/service.html#invokable-controllers" att="">doc</a>)</li>
-</ul><h2>What it doesn't ship? &#10060;</h2><ul>
-<li>The debug toolbar (<a href="https://symfony.com/doc/current/profiler.html" att="">installation</a>)</li>
-<li>Doctrine (<a href="https://symfony.com/doc/current/doctrine.html#installing-doctrine" att="">installation</a>)</li>
-</ul><h2>References &#128218;</h2><ul>
-<li>
-<a href="https://jolicode.com/blog/castor-a-journey-across-the-sea-of-task-runners" att="">Castor, a journey across the sea of task runners</a>
-</li>
-</ul></h1>
+    <h1>MicroCalendar &#127926;<h2>Introduction &#128395;</h2><p>Honestly, this repo is mostly for me to play around with a working application that doesn't need yarn or npm to run.</p><p>It is based on MicroSymfony, a Symfony application skeleton.</p><p>Eventually I will port everything from https://github.com/tacman/calendar-bundle-demo, which DOES use webpack.</p><p>In the meantime, the only things this really does is show a problem using the awesome fullcalendar library as a module.</p><h2>Installation</h2><pre><code class="language-bash">git clone https://github.com/tacman/micro-calendar &amp;&amp; cd micro-calendar &amp;&amp; composer install &amp;&amp; symfony server:start -d 
+</code></pre><p>Note the lack of yarn install &amp;&amp; yarn dev!</p><h2>Github Pages (Static)</h2><p>I wanted to show the issue to the fullcalendar developers, but I didn't have an easy way to deploy a Symfony app.</p><p>So I created static pages using https://github.com/StenopePHP/Stenope and configured github pages to point to the /docs directory.</p><pre><code class="language-bash">bin/console asset-map:compile
+bin/console -e prod cache:clear
+bin/console -e prod stenope:build ./docs --base-url /micro-calendar/
+rm public/assets/ -rf 
+</code></pre><p>You need the public/assets directory to get the right js files, but need to delete it before continuing to develop, otherwise you'll get the cached version of those files.</p><h2>AssetMapper</h2><p>The AssetMapper component is the key that allows this site to work with javascript libraries without a build step.  It's using version 6.3 now, although we will use 6.4 as soon as possible, since that version manages CSS better.</p></h1>
 
         </section>
 
