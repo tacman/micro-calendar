@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=utf-8>
+        <meta name="description" content="MicroCalendar">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+        <title>MicroCalendar</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>🎶️</text></svg>">
+
+        
+                        
+            <link rel="stylesheet" href="/assets/vendor/barecss/css/bare.min-0cc867f976c67d9a7420bafa7033921f.css">
+            <link rel="stylesheet" href="/assets/vendor/barecss/css/style.min-f7611a0ebdb9e750ff867f1f24a51351.css">
+            <link rel="stylesheet" href="/assets/styles/app-ee27afe7605bd57e14f68bfe5830ffe7.css"/>
+        
+        <style>
+        section > ul > li > a::before,
+        section > ul > li > ul > li > a::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            background: #fd0;
+            position: absolute;
+            opacity: .5;
+            -webkit-transform: scale3d(1,.1,1);
+            transform: scale3d(1,.1,1);
+            -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+            z-index: -1;
+        }
+
+        section > ul > li > a:hover::before,
+        section > ul > li > ul > li > a:hover::before {
+            -webkit-transform: none;
+            transform: none;
+        }
+    </style>
+
+                    <script type="importmap">
+{
+    "imports": {
+        "app": "/assets/app-52ffc7afb06d1f86376b3335be11b03d.js",
+        "/assets/bootstrap.js": "/assets/bootstrap-c423b8bbc1f9cae218c105ca8ca9f767.js",
+        "@symfony/stimulus-bundle": "/assets/@symfony/stimulus-bundle/loader-e1ee9ace0562f2e6a52301e4ccc8627d.js",
+        "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-abf606f3085d4a46150023eb97dbf33b.js",
+        "/assets/controllers/hello_controller.js": "/assets/controllers/hello_controller-c19dd529e97e8ef33363253ca96d13fe.js",
+        "/assets/controllers/api_controller.js": "/assets/controllers/api_controller-192ad26be8b939ca8ca28b3dad1fa53f.js",
+        "@hotwired/stimulus": "https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm",
+        "lodash": "https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm",
+        "lodash/camelCase": "https://cdn.jsdelivr.net/npm/lodash@4.17.21/camelCase.js/+esm",
+        "@fullcalendar/daygrid": "https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.9/+esm",
+        "@fullcalendar/interaction": "https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.9/+esm",
+        "@fullcalendar/core": "https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm"
+    }
+}
+</script>
+<!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support -->
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.2/dist/es-module-shims.js"></script>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm">
+<script type="module">import 'app';</script>
+            </head>
+
+    <body id="base">
+        <nav>
+            <label>
+                <input type="checkbox">
+                <header>
+                    <a href="/">
+                                                <b>Micro</b>Calendar 🎶
+                    </a>
+                </header>
+
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/composer">Composer</a></li>
+                    <li>
+                        <a>Menu</a>
+                        <menu>
+                            <menuitem><a href="/">Home (README.md)</a></menuitem>
+                            <menuitem><a href="/stimulus">JavaScript with stimulus</a></menuitem>
+                            <menuitem><a href="/composer">The <code>composer.json</code> file</a></menuitem>
+                            <menuitem><a href="/form">Form example</a></menuitem>
+                            <menuitem><a href="/404">Custom error page</a></menuitem>
+                            <menuitem><a target="_blank" href="https://barecss.com/">BarreCSS documentation</a></menuitem>
+                        </menu>
+                    </li>
+                </ul>
+            </label>
+        </nav>
+
+        <section>
+            <h1>ImportMap</h1>
+
+            
+    <h1>Calendar</h1>
+    <div id="calendar">
+        The calendar will go here.
+    </div>
+
+    <hr/>
+
+    <h1>MicroSymfony &#127926;<h2>Introduction &#128395;</h2><p>MicroSymfony is a Symfony application skeleton on steroids, ready to use.</p><p>I have made a long blog post explaining all it contains; it will be the reference
+for documentation.
+I'll update it when needed:</p><ul>
+<li>
+<a href="https://www.strangebuzz.com/en/blog/introducing-the-microsymfony-application-template" att="">Introducing the MicroSymfony application template</a>
+</li>
+</ul><p>So this blog post is the official documentation.
+This readme is a teaser of what MicroSymfony contains.</p><h2>Demo &#127752;</h2><p>Because a live demo is always better than all explanations. Here is it:</p><ul>
+<li>Live demo at <a href="https://microsymfony.ovh" att="">https://microsymfony.ovh</a>
+</li>
+</ul><h2>Requirements &#9881;</h2><ul>
+<li>
+<a href="https://www.php.net/releases/8.1/en.php" att="">PHP 8.1</a> (works with <a href="https://github.com/strangebuzz/MicroSymfony/actions/runs/6363262161/job/17278782266" att="">PHP 8.2</a>)</li>
+<li>The <a href="https://symfony.com/download" att="">Symfony CLI</a>
+</li>
+</ul><h2>Optional requirements &#9881;</h2><ul>
+<li>The <a href="https://xdebug.org/" att="">Xdebug</a> PHP extension if you want to run the code coverage report</li>
+<li>
+<a href="https://github.com/jolicode/castor" att="">Castor 0.8</a> task runner</li>
+</ul><h2>Stack &#128279;</h2><ul>
+<li>
+<a href="https://symfony.com" att="">Symfony 6.3</a>
+</li>
+<li>
+<a href="https://twig.symfony.com" att="">Twig 3</a>
+</li>
+<li>
+<a href="https://stimulus.hotwired.dev/" att="">Stimulus 3.2</a>
+</li>
+<li>
+<a href="https://phpunit.de" att="">PHPUnit 9.5</a>
+</li>
+<li>The classless <a href="http://barecss.com" att="">BareCSS</a> CSS framework</li>
+</ul><h2>Features &#128640;</h2><p><strong>MicroSymfony</strong> ships these features, ready to use:</p><ul>
+<li>Two task runner
+<ul>
+<li>Make (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/Makefile" att="">source</a>) (<a href="https://www.strangebuzz.com/en/blog/introducing-the-microsymfony-application-template#h3_4_1" att="">demo</a>)</li>
+<li>Castor (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/castor.php" att="">source</a>) (<a href="https://www.strangebuzz.com/en/blog/introducing-the-microsymfony-application-template#h3_4_2" att="">demo</a>)</li>
+</ul>
+</li>
+<li>Static analysis with PHPStan
+<ul>
+<li>
+<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/phpstan.neon" att="">Configuration</a>
+</li>
+</ul>
+</li>
+<li>Coding standards with php-cs-fixer
+<ul>
+<li>
+<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/.php-cs-fixer.dist.php" att="">Configuration</a>
+</li>
+</ul>
+</li>
+<li>Tests (<a href="https://www.strangebuzz.com/en/blog/introducing-the-microsymfony-application-template#h2_7" att="">demo</a>)
+<ul>
+<li>Unit test <a href="https://github.com/strangebuzz/MicroSymfony/blob/main/tests/Unit/Helper/StringHelperTest.php" att="">example</a>
+</li>
+<li>Integration test <a href="https://github.com/strangebuzz/MicroSymfony/blob/main/tests/Integration/Twig/Extension/ResponseExtensionTest.php" att="">example</a>
+</li>
+<li>Functional test <a href="https://github.com/strangebuzz/MicroSymfony/blob/main/tests/Functional/Controller/AppControllerTest.php" att="">example</a>
+</li>
+<li>API test <a href="https://github.com/strangebuzz/MicroSymfony/blob/main/tests/Api/Controller/SlugifyActionTest.php" att="">example</a>
+</li>
+<li>E2E test <a href="https://github.com/strangebuzz/MicroSymfony/blob/main/tests/E2E/Controller/AppControllerTest.php" att="">example</a>
+</li>
+</ul>
+</li>
+<li>Code coverage at 100%
+<ul>
+<li>
+<a href="https://github.com/strangebuzz/MicroSymfony/actions/runs/5793881686/job/15702426150" att="">Output on CI</a>
+</li>
+<li>
+<a href="https://github.com/strangebuzz/MicroSymfony/actions/runs/5220428064/jobs/9423476258" att="">Failing output example</a>
+</li>
+</ul>
+</li>
+<li>GitHub CI (<a href="https://github.com/strangebuzz/MicroSymfony/actions" att="">actions</a>)
+<ul>
+<li>
+<a href="https://github.com/strangebuzz/MicroSymfony/actions/runs/5793881686/job/15702426150" att="">Tests job output</a>
+</li>
+<li>
+<a href="https://github.com/strangebuzz/MicroSymfony/actions/runs/5793881686/job/15702425939" att="">Lint job output</a>
+</li>
+</ul>
+</li>
+<li>Asset mapper+Stimulus (<a href="https://symfony.com/doc/current/frontend/asset_mapper.html" att="">documentation</a>)
+<ul>
+<li>Vanilla Js (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/assets/controllers/hello_controller.js" att="">source</a>) (<a href="https://microsymfony.ovh/stimulus" att="">demo</a>)</li>
+<li>Fetch on a JSON endpoint of the application (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/assets/controllers/api_controller.js" att="">source</a>) (<a href="https://microsymfony.ovh/stimulus" att="">demo</a>)</li>
+</ul>
+</li>
+<li>A custom error template
+<ul>
+<li>
+<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/templates/bundles/TwigBundle/Exception/error.html.twig" att="">Source</a>
+</li>
+<li>
+<a href="https://microsymfony.ovh/404" att="">Demo</a>
+</li>
+</ul>
+</li>
+</ul><h2>Other good practices &#128076;</h2><ul>
+<li>Using strict types in all PHP files (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/src/Controller/AppController.php" att="">source</a>)</li>
+<li>Using the ADR pattern in an action controller (<a href="https://github.com/strangebuzz/MicroSymfony/blob/main/src/Controller/SlugifyAcfion.php" att="">source</a>) (<a href="https://symfony.com/doc/current/controller/service.html#invokable-controllers" att="">doc</a>)</li>
+</ul><h2>What it doesn't ship? &#10060;</h2><ul>
+<li>The debug toolbar (<a href="https://symfony.com/doc/current/profiler.html" att="">installation</a>)</li>
+<li>Doctrine (<a href="https://symfony.com/doc/current/doctrine.html#installing-doctrine" att="">installation</a>)</li>
+</ul><h2>References &#128218;</h2><ul>
+<li>
+<a href="https://jolicode.com/blog/castor-a-journey-across-the-sea-of-task-runners" att="">Castor, a journey across the sea of task runners</a>
+</li>
+</ul></h1>
+
+        </section>
+
+        <footer>
+            <h5>MicroCalendar</h5>
+
+            <grid>
+                <div fx="" col="3/4">
+                    A Symfony minimalist application template by <a att="" href="https://strangebuzz.com" target="_blank">COil/Strangebuzz 🐝</a>
+                    <br/>
+                    Symfony ™ is a trademark of <a target="_blank" att="" href="https://symfony.com/license">Symfony SAS</a>.
+                </div>
+
+                <div fx="" col="1/4" txt="r">
+                    <a att="" href="https://github.com/strangebuzz/MicroSymfony" target="_blank"><img alt="GitHub" class="github-icon" src="/assets/vendor/barecss/icons/github-f3827bc812b2abc53031262b5718824f.svg"></a>
+                </div>
+            </grid>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=utf-8>
+        <meta name="description" content="MicroCalendar">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+        <title>MicroCalendar</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>🎶️</text></svg>">
+
+        
+                    
+            <link rel="stylesheet" href="/assets/vendor/barecss/css/bare.min-0cc867f976c67d9a7420bafa7033921f.css">
+            <link rel="stylesheet" href="/assets/vendor/barecss/css/style.min-f7611a0ebdb9e750ff867f1f24a51351.css">
+            <link rel="stylesheet" href="/assets/styles/app-ee27afe7605bd57e14f68bfe5830ffe7.css"/>
+        
+                    <script type="importmap">
+{
+    "imports": {
+        "app": "/assets/app-52ffc7afb06d1f86376b3335be11b03d.js",
+        "/assets/bootstrap.js": "/assets/bootstrap-c423b8bbc1f9cae218c105ca8ca9f767.js",
+        "@symfony/stimulus-bundle": "/assets/@symfony/stimulus-bundle/loader-e1ee9ace0562f2e6a52301e4ccc8627d.js",
+        "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-abf606f3085d4a46150023eb97dbf33b.js",
+        "/assets/controllers/hello_controller.js": "/assets/controllers/hello_controller-c19dd529e97e8ef33363253ca96d13fe.js",
+        "/assets/controllers/api_controller.js": "/assets/controllers/api_controller-192ad26be8b939ca8ca28b3dad1fa53f.js",
+        "@hotwired/stimulus": "https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm",
+        "lodash": "https://cdn.jsdelivr.net/npm/lodash@4.17.21/+esm",
+        "lodash/camelCase": "https://cdn.jsdelivr.net/npm/lodash@4.17.21/camelCase.js/+esm",
+        "@fullcalendar/daygrid": "https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.9/+esm",
+        "@fullcalendar/interaction": "https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.9/+esm",
+        "@fullcalendar/core": "https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm"
+    }
+}
+</script>
+<!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support -->
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.2/dist/es-module-shims.js"></script>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm">
+<script type="module">import 'app';</script>
+            </head>
+
+    <body id="base">
+        <nav>
+            <label>
+                <input type="checkbox">
+                <header>
+                    <a href="/">
+                                                <b>Micro</b>Calendar 🎶
+                    </a>
+                </header>
+
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/composer">Composer</a></li>
+                    <li>
+                        <a>Menu</a>
+                        <menu>
+                            <menuitem><a href="/">Home (README.md)</a></menuitem>
+                            <menuitem><a href="/stimulus">JavaScript with stimulus</a></menuitem>
+                            <menuitem><a href="/composer">The <code>composer.json</code> file</a></menuitem>
+                            <menuitem><a href="/form">Form example</a></menuitem>
+                            <menuitem><a href="/404">Custom error page</a></menuitem>
+                            <menuitem><a target="_blank" href="https://barecss.com/">BarreCSS documentation</a></menuitem>
+                        </menu>
+                    </li>
+                </ul>
+            </label>
+        </nav>
+
+        <section>
+            <h1>ImportMap</h1>
+
+                <div class="sub-heading">
+        <h2>Composer ⚡</h2>
+    </div>
+
+    <p>
+        Check-out the <a target="_blank" att="" href="https://packagist.org/packages/strangebuzz/microsymfony">package homepage on packagist.org.</a>
+    </p>
+
+    <p>
+        The current <code>composer.json</code> file:
+    </p>
+
+    <pre><code>{
+    &quot;name&quot;: &quot;tacman/micro-calendar&quot;,
+    &quot;description&quot;: &quot;A template to initialize an application to use Symfony as a micro-framework&quot;,
+    &quot;license&quot;: &quot;MIT&quot;,
+    &quot;type&quot;: &quot;symfony-application&quot;,
+    &quot;keywords&quot;: [
+        &quot;micro-framework&quot;,
+        &quot;php&quot;,
+        &quot;poc&quot;,
+        &quot;project-template&quot;,
+        &quot;rad&quot;,
+        &quot;symfony&quot;,
+        &quot;web-application&quot;
+    ],
+    &quot;homepage&quot;: &quot;https://github.com/tacman/micro-calendar&quot;,
+    &quot;require&quot;: {
+        &quot;php&quot;: &quot;&gt;=8.1&quot;,
+        &quot;ext-ctype&quot;: &quot;*&quot;,
+        &quot;ext-dom&quot;: &quot;*&quot;,
+        &quot;ext-iconv&quot;: &quot;*&quot;,
+        &quot;ext-libxml&quot;: &quot;*&quot;,
+        &quot;ext-simplexml&quot;: &quot;*&quot;,
+        &quot;ext-xml&quot;: &quot;*&quot;,
+        &quot;doctrine/doctrine-bundle&quot;: &quot;^2.10&quot;,
+        &quot;doctrine/doctrine-migrations-bundle&quot;: &quot;^3.2&quot;,
+        &quot;doctrine/orm&quot;: &quot;^2.16&quot;,
+        &quot;league/commonmark&quot;: &quot;^2.3&quot;,
+        &quot;stenope/stenope&quot;: &quot;^0.8.0&quot;,
+        &quot;symfony/asset&quot;: &quot;^6.3&quot;,
+        &quot;symfony/asset-mapper&quot;: &quot;^6.3&quot;,
+        &quot;symfony/console&quot;: &quot;^6.3&quot;,
+        &quot;symfony/dotenv&quot;: &quot;^6.3&quot;,
+        &quot;symfony/flex&quot;: &quot;^2&quot;,
+        &quot;symfony/form&quot;: &quot;^6.3&quot;,
+        &quot;symfony/framework-bundle&quot;: &quot;^6.3&quot;,
+        &quot;symfony/intl&quot;: &quot;^6.3&quot;,
+        &quot;symfony/monolog-bundle&quot;: &quot;^3.8&quot;,
+        &quot;symfony/runtime&quot;: &quot;^6.3&quot;,
+        &quot;symfony/stimulus-bundle&quot;: &quot;^2.9&quot;,
+        &quot;symfony/twig-bundle&quot;: &quot;^6.3&quot;,
+        &quot;symfony/validator&quot;: &quot;^6.3&quot;,
+        &quot;symfony/web-link&quot;: &quot;^6.3&quot;,
+        &quot;symfony/yaml&quot;: &quot;^6.3&quot;,
+        &quot;twig/extra-bundle&quot;: &quot;^3.0&quot;,
+        &quot;twig/markdown-extra&quot;: &quot;^3.5&quot;,
+        &quot;twig/twig&quot;: &quot;^3.7&quot;
+    },
+    &quot;require-dev&quot;: {
+        &quot;friendsofphp/php-cs-fixer&quot;: &quot;^3.14&quot;,
+        &quot;phpstan/extension-installer&quot;: &quot;^1.2&quot;,
+        &quot;phpstan/phpstan-symfony&quot;: &quot;^1.2&quot;,
+        &quot;phpunit/phpunit&quot;: &quot;^9.0&quot;,
+        &quot;symfony/browser-kit&quot;: &quot;^6.3&quot;,
+        &quot;symfony/css-selector&quot;: &quot;^6.3&quot;,
+        &quot;symfony/debug-bundle&quot;: &quot;^6.3&quot;,
+        &quot;symfony/maker-bundle&quot;: &quot;^1.51&quot;,
+        &quot;symfony/phpunit-bridge&quot;: &quot;^6.3&quot;,
+        &quot;symfony/stopwatch&quot;: &quot;^6.3&quot;,
+        &quot;symfony/web-profiler-bundle&quot;: &quot;^6.3&quot;
+    },
+    &quot;replace&quot;: {
+        &quot;symfony/polyfill-ctype&quot;: &quot;*&quot;,
+        &quot;symfony/polyfill-iconv&quot;: &quot;*&quot;,
+        &quot;symfony/polyfill-php72&quot;: &quot;*&quot;,
+        &quot;symfony/polyfill-php73&quot;: &quot;*&quot;,
+        &quot;symfony/polyfill-php74&quot;: &quot;*&quot;,
+        &quot;symfony/polyfill-php80&quot;: &quot;*&quot;,
+        &quot;symfony/polyfill-php81&quot;: &quot;*&quot;
+    },
+    &quot;conflict&quot;: {
+        &quot;symfony/symfony&quot;: &quot;*&quot;
+    },
+    &quot;minimum-stability&quot;: &quot;beta&quot;,
+    &quot;prefer-stable&quot;: true,
+    &quot;autoload&quot;: {
+        &quot;psr-4&quot;: {
+            &quot;App\\&quot;: &quot;src/&quot;
+        }
+    },
+    &quot;autoload-dev&quot;: {
+        &quot;psr-4&quot;: {
+            &quot;App\\Tests\\&quot;: &quot;tests/&quot;
+        }
+    },
+    &quot;config&quot;: {
+        &quot;allow-plugins&quot;: {
+            &quot;php-http/discovery&quot;: true,
+            &quot;symfony/flex&quot;: true,
+            &quot;symfony/runtime&quot;: true,
+            &quot;phpstan/extension-installer&quot;: true
+        },
+        &quot;sort-packages&quot;: true
+    },
+    &quot;extra&quot;: {
+        &quot;symfony&quot;: {
+            &quot;allow-contrib&quot;: true
+        }
+    },
+    &quot;scripts&quot;: {
+        &quot;post-install-cmd&quot;: [
+            &quot;@auto-scripts&quot;
+        ],
+        &quot;post-update-cmd&quot;: [
+            &quot;@auto-scripts&quot;
+        ],
+        &quot;app:test&quot;: [
+            &quot;vendor/bin/simple-phpunit&quot;
+        ],
+        &quot;auto-scripts&quot;: {
+            &quot;cache:clear&quot;: &quot;symfony-cmd&quot;,
+            &quot;assets:install %PUBLIC_DIR%&quot;: &quot;symfony-cmd&quot;,
+            &quot;asset-map:compile&quot;: &quot;symfony-cmd&quot;
+        }
+    },
+    &quot;scripts-descriptions&quot;: {
+        &quot;app:test&quot;: &quot;Run all PHPUnit tests&quot;
+    }
+}
+</code></pre>
+        </section>
+
+        <footer>
+            <h5>MicroCalendar</h5>
+
+            <grid>
+                <div fx="" col="3/4">
+                    A Symfony minimalist application template by <a att="" href="https://strangebuzz.com" target="_blank">COil/Strangebuzz 🐝</a>
+                    <br/>
+                    Symfony ™ is a trademark of <a target="_blank" att="" href="https://symfony.com/license">Symfony SAS</a>.
+                </div>
+
+                <div fx="" col="1/4" txt="r">
+                    <a att="" href="https://github.com/strangebuzz/MicroSymfony" target="_blank"><img alt="GitHub" class="github-icon" src="/assets/vendor/barecss/icons/github-f3827bc812b2abc53031262b5718824f.svg"></a>
+                </div>
+            </grid>
+        </footer>
+    </body>
+</html>
