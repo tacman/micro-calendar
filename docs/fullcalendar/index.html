@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset=utf-8>
+        <meta name="description" content="MicroCalendar">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+        <title>MicroCalendar</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>🎶️</text></svg>">
+
+        
+                    
+            <link href="https://cdn.jsdelivr.net/npm/bare-css@2.0.3/css/bare.min.css" rel="stylesheet">
+
+            <link rel="stylesheet" href="/assets/styles/app-ee27afe7605bd57e14f68bfe5830ffe7.css"/>
+        
+                    <script type="importmap">
+{
+    "imports": {
+        "app": "/assets/app-e4599d4ad24d45913e4d05569a4414b4.js",
+        "/assets/bootstrap.js": "/assets/bootstrap-c423b8bbc1f9cae218c105ca8ca9f767.js",
+        "@symfony/stimulus-bundle": "/assets/@symfony/stimulus-bundle/loader-e1ee9ace0562f2e6a52301e4ccc8627d.js",
+        "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-abf606f3085d4a46150023eb97dbf33b.js",
+        "/assets/controllers/hello_controller.js": "/assets/controllers/hello_controller-c19dd529e97e8ef33363253ca96d13fe.js",
+        "/assets/controllers/api_controller.js": "/assets/controllers/api_controller-192ad26be8b939ca8ca28b3dad1fa53f.js",
+        "@hotwired/stimulus": "https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm",
+        "@fullcalendar/daygrid": "https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.9/+esm",
+        "@fullcalendar/interaction": "https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.9/+esm",
+        "@fullcalendar/core": "https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm"
+    }
+}
+</script>
+<!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support -->
+<script async src="https://ga.jspm.io/npm:es-module-shims@1.7.2/dist/es-module-shims.js"></script>
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm">
+<script type="module">import 'app';</script>
+            </head>
+
+    <body id="base">
+        <nav>
+            <label>
+                <input type="checkbox">
+                <header>
+                    <a href="/">
+                                                <b>Micro</b>Calendar 🎶
+                    </a>
+                </header>
+
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/composer">Composer</a></li>
+                    <li>
+                        <a>Menu</a>
+                        <menu>
+                            <menuitem><a href="/">Home (README.md)</a></menuitem>
+                            <menuitem><a href="/fullcalendar">FullCalendar Demo</a></menuitem>
+                            <menuitem><a href="/stimulus">JavaScript with stimulus</a></menuitem>
+                            <menuitem><a href="/composer">The <code>composer.json</code> file</a></menuitem>
+                            <menuitem><a href="/form">Form example</a></menuitem>
+                            <menuitem><a href="/404">Custom error page</a></menuitem>
+                            <menuitem><a target="_blank" href="https://barecss.com/">BarreCSS documentation</a></menuitem>
+                        </menu>
+                    </li>
+                </ul>
+            </label>
+        </nav>
+
+        <section>
+            <h1>ImportMap</h1>
+
+            
+    <h1>Calendar</h1>
+    <div id="calendar">
+        The calendar will go here.
+    </div>
+
+    <h3>Importmap (in the head tag)</h3>
+    <pre>&lt;script type=&quot;importmap&quot;&gt;
+{
+    &quot;imports&quot;: {
+        &quot;app&quot;: &quot;/assets/app-e4599d4ad24d45913e4d05569a4414b4.js&quot;,
+        &quot;/assets/bootstrap.js&quot;: &quot;/assets/bootstrap-c423b8bbc1f9cae218c105ca8ca9f767.js&quot;,
+        &quot;@symfony/stimulus-bundle&quot;: &quot;/assets/@symfony/stimulus-bundle/loader-e1ee9ace0562f2e6a52301e4ccc8627d.js&quot;,
+        &quot;/assets/@symfony/stimulus-bundle/controllers.js&quot;: &quot;/assets/@symfony/stimulus-bundle/controllers-abf606f3085d4a46150023eb97dbf33b.js&quot;,
+        &quot;/assets/controllers/hello_controller.js&quot;: &quot;/assets/controllers/hello_controller-c19dd529e97e8ef33363253ca96d13fe.js&quot;,
+        &quot;/assets/controllers/api_controller.js&quot;: &quot;/assets/controllers/api_controller-192ad26be8b939ca8ca28b3dad1fa53f.js&quot;,
+        &quot;@hotwired/stimulus&quot;: &quot;https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm&quot;,
+        &quot;@fullcalendar/daygrid&quot;: &quot;https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.9/+esm&quot;,
+        &quot;@fullcalendar/interaction&quot;: &quot;https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.9/+esm&quot;,
+        &quot;@fullcalendar/core&quot;: &quot;https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm&quot;
+    }
+}
+&lt;/script&gt;
+&lt;!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support --&gt;
+&lt;script async src=&quot;https://ga.jspm.io/npm:es-module-shims@1.7.2/dist/es-module-shims.js&quot;&gt;&lt;/script&gt;
+&lt;link rel=&quot;modulepreload&quot; href=&quot;https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm&quot;&gt;
+&lt;script type=&quot;module&quot;&gt;import &#039;app&#039;;&lt;/script&gt;</pre>
+    <h3>App.js</h3>
+    <pre>/*
+ * Welcome to your app&#039;s main JavaScript file!
+ *
+ * This file will be included onto the page via the importmap() Twig function,
+ * which should already be in your base.html.twig.
+ */
+
+import &#039;./bootstrap.js&#039;;
+import { Calendar } from &#039;@fullcalendar/core&#039;
+import interactionPlugin from &#039;@fullcalendar/interaction&#039;
+import dayGridPlugin from &#039;@fullcalendar/daygrid&#039;
+// //
+const calendarEl = document.getElementById(&#039;calendar&#039;)
+const calendar = new Calendar(calendarEl, {
+    plugins: [
+        interactionPlugin,
+        dayGridPlugin
+    ],
+    initialView: &#039;dayGridMonth&#039;,
+    editable: false,
+    events: [
+        { title: &#039;Meeting&#039;, start: new Date() },
+        { title: &#039;Another Meeting&#039;, start: new Date() }
+    ]
+})
+
+calendar.render()
+</pre>
+
+
+        </section>
+
+        <footer>
+            <h5>MicroCalendar</h5>
+
+            <grid>
+                <div fx="" col="3/4">
+                    A Symfony minimalist application template by <a att="" href="https://strangebuzz.com" target="_blank">COil/Strangebuzz 🐝</a>
+                    <br/>
+                    Symfony ™ is a trademark of <a target="_blank" att="" href="https://symfony.com/license">Symfony SAS</a>.
+                </div>
+
+                <div fx="" col="1/4" txt="r">
+                    <a att="" href="https://github.com/strangebuzz/MicroSymfony" target="_blank"><img alt="GitHub" class="github-icon" src="/assets/vendor/barecss/icons/github-f3827bc812b2abc53031262b5718824f.svg"></a>
+                </div>
+            </grid>
+        </footer>
+    </body>
+</html>
