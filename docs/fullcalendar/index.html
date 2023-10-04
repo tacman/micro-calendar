@@ -14,10 +14,10 @@
 
             <link rel="stylesheet" href="/micro-calendar/assets/styles/app-ee27afe7605bd57e14f68bfe5830ffe7.css"/>
         
-                    <script type="importmap">
+                        <script type="importmap">
 {
     "imports": {
-        "app": "/assets/app-e4599d4ad24d45913e4d05569a4414b4.js",
+        "app": "/assets/app-809bf5e9f028dcd31efbedebe5e07988.js",
         "/assets/bootstrap.js": "/assets/bootstrap-c423b8bbc1f9cae218c105ca8ca9f767.js",
         "@symfony/stimulus-bundle": "/assets/@symfony/stimulus-bundle/loader-e1ee9ace0562f2e6a52301e4ccc8627d.js",
         "/assets/@symfony/stimulus-bundle/controllers.js": "/assets/@symfony/stimulus-bundle/controllers-abf606f3085d4a46150023eb97dbf33b.js",
@@ -34,7 +34,30 @@
 <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.2/dist/es-module-shims.js"></script>
 <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm">
 <script type="module">import 'app';</script>
-            </head>
+        
+<script  type="module">
+    import { Calendar } from '@fullcalendar/core'
+    import interactionPlugin from '@fullcalendar/interaction'
+    import dayGridPlugin from '@fullcalendar/daygrid'
+    // //
+    const calendarEl = document.getElementById('calendar')
+    const calendar = new Calendar(calendarEl, {
+        plugins: [
+            interactionPlugin,
+            dayGridPlugin
+        ],
+        initialView: 'dayGridMonth',
+        editable: false,
+        events: [
+            { title: 'Meeting', start: new Date() },
+            { title: 'Another Meeting', start: new Date() }
+        ]
+    })
+
+    calendar.render()
+
+</script>
+    </head>
 
     <body id="base">
         <nav>
@@ -78,7 +101,7 @@
     <pre>&lt;script type=&quot;importmap&quot;&gt;
 {
     &quot;imports&quot;: {
-        &quot;app&quot;: &quot;/assets/app-e4599d4ad24d45913e4d05569a4414b4.js&quot;,
+        &quot;app&quot;: &quot;/assets/app-809bf5e9f028dcd31efbedebe5e07988.js&quot;,
         &quot;/assets/bootstrap.js&quot;: &quot;/assets/bootstrap-c423b8bbc1f9cae218c105ca8ca9f767.js&quot;,
         &quot;@symfony/stimulus-bundle&quot;: &quot;/assets/@symfony/stimulus-bundle/loader-e1ee9ace0562f2e6a52301e4ccc8627d.js&quot;,
         &quot;/assets/@symfony/stimulus-bundle/controllers.js&quot;: &quot;/assets/@symfony/stimulus-bundle/controllers-abf606f3085d4a46150023eb97dbf33b.js&quot;,
@@ -95,35 +118,29 @@
 &lt;script async src=&quot;https://ga.jspm.io/npm:es-module-shims@1.7.2/dist/es-module-shims.js&quot;&gt;&lt;/script&gt;
 &lt;link rel=&quot;modulepreload&quot; href=&quot;https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm&quot;&gt;
 &lt;script type=&quot;module&quot;&gt;import &#039;app&#039;;&lt;/script&gt;</pre>
-    <h3>App.js</h3>
-    <pre>/*
- * Welcome to your app&#039;s main JavaScript file!
- *
- * This file will be included onto the page via the importmap() Twig function,
- * which should already be in your base.html.twig.
- */
+    <h3>Javascript</h3>
+    <pre>&lt;script  type=&quot;module&quot;&gt;
+    import { Calendar } from &#039;@fullcalendar/core&#039;
+    import interactionPlugin from &#039;@fullcalendar/interaction&#039;
+    import dayGridPlugin from &#039;@fullcalendar/daygrid&#039;
+    // //
+    const calendarEl = document.getElementById(&#039;calendar&#039;)
+    const calendar = new Calendar(calendarEl, {
+        plugins: [
+            interactionPlugin,
+            dayGridPlugin
+        ],
+        initialView: &#039;dayGridMonth&#039;,
+        editable: false,
+        events: [
+            { title: &#039;Meeting&#039;, start: new Date() },
+            { title: &#039;Another Meeting&#039;, start: new Date() }
+        ]
+    })
 
-import &#039;./bootstrap.js&#039;;
-import { Calendar } from &#039;@fullcalendar/core&#039;
-import interactionPlugin from &#039;@fullcalendar/interaction&#039;
-import dayGridPlugin from &#039;@fullcalendar/daygrid&#039;
-// //
-const calendarEl = document.getElementById(&#039;calendar&#039;)
-const calendar = new Calendar(calendarEl, {
-    plugins: [
-        interactionPlugin,
-        dayGridPlugin
-    ],
-    initialView: &#039;dayGridMonth&#039;,
-    editable: false,
-    events: [
-        { title: &#039;Meeting&#039;, start: new Date() },
-        { title: &#039;Another Meeting&#039;, start: new Date() }
-    ]
-})
+    calendar.render()
 
-calendar.render()
-</pre>
+&lt;/script&gt;</pre>
 
 
         </section>

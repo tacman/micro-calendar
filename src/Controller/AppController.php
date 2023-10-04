@@ -33,7 +33,9 @@ final class AppController extends AbstractController
     #[Route(path: '/fullcalendar', name: 'fullcalendar')]
     public function fullcalendar(): Response
     {
-        $js = file_get_contents(__DIR__.'/../../assets/app.js');
+        $twig = file_get_contents(__DIR__.'/../../templates/fullcalendar.html.twig');
+        preg_match('/<script.*?script>/sm', $twig, $mm);
+        $js = $mm[0];
 
         return $this->render('fullcalendar.html.twig', compact('js'));
     }
