@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Returns the import map for this application.
+ * Returns the importmap for this application.
  *
  * - "path" is a path inside the asset mapper system. Use the
  *     "debug:asset-map" command to see the full list of paths.
  *
- * - "preload" set to true for any modules that are loaded on the initial
- *     page load to help the browser download them earlier.
+ * - "entrypoint" (JavaScript only) set to true for any module that will
+ *     be used as an the "entrypoint" (and passed to the importmap() Twig function).
  *
  * The "importmap:require" command can be used to add new entries to this file.
  *
@@ -16,6 +16,7 @@
 return [
     'app' => [
         'path' => 'app.js',
+        'entrypoint' => true
     ],
     '@symfony/stimulus-bundle' => [
         'path' => '@symfony/stimulus-bundle/loader.js',
@@ -24,15 +25,22 @@ return [
         'url' => 'https://cdn.jsdelivr.net/npm/@hotwired/stimulus@3.2.2/+esm',
     ],
     '@fullcalendar/daygrid' => [
-        'url' => 'https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.9/+esm',
+        'url' => 'https://cdn.skypack.dev/@fullcalendar/daygrid@6.1.9',
     ],
     '@fullcalendar/interaction' => [
-        'url' => 'https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@6.1.9/+esm',
+        'url' => 'https://cdn.skypack.dev/@fullcalendar/interaction@6.1.9',
     ],
     '@fullcalendar/core' => [
-        'url' => 'https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.9/+esm',
+        'url' => 'https://cdn.skypack.dev/@fullcalendar/core@6.1.9',
     ],
     'bootstrap' => [
         'url' => 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/+esm',
+    ],
+    'flowbite' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/flowbite@1.8.1/+esm',
+    ],
+    'flowbite/dist/flowbite.min.css' => [
+        'url' => 'https://cdn.jsdelivr.net/npm/flowbite@1.8.1/dist/flowbite.min.css',
+        'type' => 'css',
     ],
 ];

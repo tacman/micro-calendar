@@ -1,13 +1,12 @@
 {
     "name": "tacman/micro-calendar",
-    "description": "A template to initialize an application to use Symfony as a micro-framework",
+    "description": "An application that uses javascript libraries using AssetMapper instead of webpack",
     "license": "MIT",
     "type": "symfony-application",
     "keywords": [
         "micro-framework",
         "php",
         "poc",
-        "project-template",
         "rad",
         "symfony",
         "web-application"
@@ -26,21 +25,23 @@
         "doctrine/orm": "^2.16",
         "league/commonmark": "^2.3",
         "stenope/stenope": "^0.8.0",
-        "symfony/asset": "^6.3",
-        "symfony/asset-mapper": "^6.3",
-        "symfony/console": "^6.3",
-        "symfony/dotenv": "^6.3",
+        "symfony/asset": "^6.4",
+        "symfony/asset-mapper": "^6.4",
+        "symfony/console": "^6.4",
+        "symfony/dotenv": "^6.4",
         "symfony/flex": "^2",
-        "symfony/form": "^6.3",
-        "symfony/framework-bundle": "^6.3",
-        "symfony/intl": "^6.3",
+        "symfony/form": "^6.4",
+        "symfony/framework-bundle": "^6.4",
+        "symfony/intl": "^6.4",
         "symfony/monolog-bundle": "^3.8",
-        "symfony/runtime": "^6.3",
-        "symfony/stimulus-bundle": "^2.9",
-        "symfony/twig-bundle": "^6.3",
-        "symfony/validator": "^6.3",
-        "symfony/web-link": "^6.3",
-        "symfony/yaml": "^6.3",
+        "symfony/runtime": "^6.4",
+        "symfony/stimulus-bundle": "2.x-dev",
+        "symfony/twig-bundle": "^6.4",
+        "symfony/ux-twig-component": "2.x-dev",
+        "symfony/validator": "^6.4",
+        "symfony/web-link": "^6.4",
+        "symfony/yaml": "^6.4",
+        "tattali/calendar-bundle": "dev-master",
         "twig/extra-bundle": "^3.0",
         "twig/markdown-extra": "^3.5",
         "twig/twig": "^3.7"
@@ -50,13 +51,13 @@
         "phpstan/extension-installer": "^1.2",
         "phpstan/phpstan-symfony": "^1.2",
         "phpunit/phpunit": "^9.0",
-        "symfony/browser-kit": "^6.3",
-        "symfony/css-selector": "^6.3",
-        "symfony/debug-bundle": "^6.3",
+        "symfony/browser-kit": "^6.4",
+        "symfony/css-selector": "^6.4",
+        "symfony/debug-bundle": "^6.4",
         "symfony/maker-bundle": "^1.51",
-        "symfony/phpunit-bridge": "^6.3",
-        "symfony/stopwatch": "^6.3",
-        "symfony/web-profiler-bundle": "^6.3"
+        "symfony/phpunit-bridge": "^6.4",
+        "symfony/stopwatch": "^6.4",
+        "symfony/web-profiler-bundle": "^6.4"
     },
     "replace": {
         "symfony/polyfill-ctype": "*",
@@ -71,7 +72,7 @@
         "symfony/symfony": "*"
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
+    "prefer-stable": false,
     "autoload": {
         "psr-4": {
             "App\\": "src/"
@@ -94,7 +95,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": true,
-            "version": "^6.4"
+            "require": "^6.4"
         }
     },
     "scripts": {

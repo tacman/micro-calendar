@@ -5,6 +5,10 @@
  * which should already be in your base.html.twig.
  */
 
+import './styles/app.css'
+
+// import 'flowbite/dist/flowbite.min.css';
+
 import './bootstrap.js';
 // import { Calendar } from '@fullcalendar/core'
 // import interactionPlugin from '@fullcalendar/interaction'

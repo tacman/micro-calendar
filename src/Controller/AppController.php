@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Dto\RegisterFormDto;
 use App\Form\Type\RegisterForm;
+use CalendarBundle\Entity\Event as CalendarBundleEvent;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,9 +26,16 @@ final class AppController extends AbstractController
     #[Route(path: '/', name: 'home')]
     public function home(): Response
     {
+        $dt = new \DateTime(); // for the demo, start with the current date
+        $events = [];
+        $events[] = ['title' => 'now()', 'start' => $dt->format('c')];
+        $events[] = ['title' => 'Set Goals', 'start' => $dt->format("Y-m-01")];
+        $events[] = ['title' => 'Reflect', 'start' => $dt->format("Y-m-t")];
+
         $readme = file_get_contents(__DIR__.'/../../README.md');
 
-        return $this->render('home.html.twig', compact('readme'));
+
+        return $this->render('home.html.twig', compact('events', 'readme'));
     }
 
     #[Route(path: '/fullcalendar', name: 'fullcalendar')]
@@ -38,6 +46,16 @@ final class AppController extends AbstractController
         $js = $mm[0];
 
         return $this->render('fullcalendar.html.twig', compact('js'));
+    }
+
+    #[Route(path: '/modal', name: 'modal')]
+    public function modal(): Response
+    {
+        $twig = file_get_contents(__DIR__.'/../../templates/modal.html.twig');
+        preg_match('/<script.*?script>/sm', $twig, $mm);
+        $js = $mm[0];
+
+        return $this->render('modal.html.twig', compact('js'));
     }
 
     /**

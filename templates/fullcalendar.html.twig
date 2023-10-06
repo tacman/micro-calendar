@@ -2,28 +2,30 @@
 
 {% block javascripts %}
     {{ parent() }}
-<script  type="module">
-    import { Calendar } from '@fullcalendar/core'
-    import interactionPlugin from '@fullcalendar/interaction'
-    import dayGridPlugin from '@fullcalendar/daygrid'
-    // //
-    const calendarEl = document.getElementById('calendar')
-    const calendar = new Calendar(calendarEl, {
-        plugins: [
-            interactionPlugin,
-            dayGridPlugin
-        ],
-        initialView: 'dayGridMonth',
-        editable: false,
-        events: [
-            { title: 'Meeting', start: new Date() },
-            { title: 'Another Meeting', start: new Date() }
-        ]
-    })
+    <script type="module">
+        import {Calendar} from '@fullcalendar/core'
+        import interactionPlugin from '@fullcalendar/interaction'
+        import dayGridPlugin from '@fullcalendar/daygrid'
+        // //
+        // document.addEventListener('DOMContentLoaded', function () {
+            const calendarEl = document.getElementById('calendar')
+            const calendar = new Calendar(calendarEl, {
+                plugins: [
+                    interactionPlugin,
+                    dayGridPlugin
+                ],
+                initialView: 'dayGridMonth',
+                editable: false,
+                events: [
+                    {title: 'Meeting', start: new Date()},
+                    {title: 'Another Meeting', start: new Date()}
+                ]
+            })
 
-    calendar.render()
+            calendar.render()
+        // });
 
-</script>
+    </script>
 {% endblock %}
 {% block body %}
 
