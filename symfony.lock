@@ -68,12 +68,12 @@
         "version": "v0.8.0"
     },
     "symfony/asset-mapper": {
-        "version": "6.3",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
-            "version": "6.3",
-            "ref": "e8c46ba5e488fc2d7462ab6832559ab93867370a"
+            "version": "6.4",
+            "ref": "6c28c471640cc2c6e60812ebcb961c526ef8997f"
         },
         "files": [
             "assets/app.js",

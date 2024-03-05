@@ -18,7 +18,7 @@ git clone https://github.com/tacman/micro-calendar && cd micro-calendar && compo
 
 Note the lack of yarn install && yarn dev!
 
-## Github Pages (Static)
+## GitHub Pages (Static)
 
 I wanted to show the issue to the fullcalendar developers, but I didn't have an easy way to deploy a Symfony app.  
 
